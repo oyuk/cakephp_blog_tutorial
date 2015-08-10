@@ -1,0 +1,18 @@
+CREATE TABLE comments (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    post_id INT UNSIGNED,
+    body TEXT,
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+
+INSERT INTO comments (post_id,body,created)
+    VALUES (2,'タイトル', NOW());
+INSERT INTO comments (post_id,body,created)
+    VALUES (3,'またタイトル', NOW());
+INSERT INTO comments (post_id,body,created)
+    VALUES (4,'タイトルの逆襲', NOW());
+
+
+ALTER TABLE comments  ADD COLUMN user_id INT(11);
